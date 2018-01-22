@@ -43,7 +43,14 @@ title: 动态规划
 
 获得递归解：
 
-$$c[i,j] = \begin{cases} 0, & \text {if i=0 or j=0} \\ c[i-1,j-1]+1, & \text {if i, j>0 and $x_i=y_j$}\\max(c[i,j-1],c[i-1,j]) & \text{if i, j>0 and $x_i\neq y_j$} \end{cases}$$
+$$
+c[i,j] =
+\begin{cases}
+0, & \text {if i=0 or j=0} \\
+c[i-1,j-1]+1, & \text {if i, j>0 and $x_i=y_j$}\\
+max(c[i,j-1],c[i-1,j]) & \text{if i, j>0 and $x_i\neq y_j$}
+\end{cases}
+$$
 
 计算长度:
 自底向上计算 O(mn) 个不同的子问题。维护表b，内容为三种不同情况的子结构的选择，以简化最优解的构造。
